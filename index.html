@@ -34,13 +34,33 @@
       align-items: center;
       padding: 60px 10%;
       background:
-        radial-gradient(circle at top right, rgba(45, 118, 255, 0.25), transparent 35%),
+        radial-gradient(circle at top right, rgba(45, 118, 255, 0.28), transparent 35%),
         radial-gradient(circle at bottom left, rgba(120, 80, 255, 0.18), transparent 30%),
         #080b12;
     }
 
+    section {
+      padding: 80px 10%;
+    }
+
+    h1 {
+      font-size: clamp(56px, 9vw, 112px);
+      line-height: 0.95;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      font-size: clamp(36px, 6vw, 64px);
+      margin-bottom: 18px;
+    }
+
+    h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
     .hero {
-      max-width: 850px;
+      max-width: 900px;
     }
 
     .tag {
@@ -48,26 +68,22 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       font-size: 14px;
+      font-weight: bold;
       margin-bottom: 18px;
     }
 
-    h1 {
-      font-size: clamp(48px, 8vw, 92px);
-      line-height: 1;
+    .subtitle {
+      font-size: 26px;
+      color: #d7d7d7;
       margin-bottom: 22px;
     }
 
-    .subtitle {
-      font-size: 24px;
-      color: #d7d7d7;
-      margin-bottom: 24px;
-    }
-
-    .intro {
+    .intro,
+    .section-note {
       font-size: 18px;
       color: #b8b8b8;
-      max-width: 700px;
-      margin-bottom: 36px;
+      max-width: 820px;
+      margin-bottom: 34px;
     }
 
     .buttons {
@@ -83,12 +99,12 @@
       background: #2f6dff;
       color: white;
       font-weight: bold;
-      transition: 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(47, 109, 255, 0.25);
+      box-shadow: 0 12px 30px rgba(47, 109, 255, 0.28);
     }
 
     .btn.secondary {
@@ -96,88 +112,54 @@
       color: #dce7ff;
     }
 
-    section {
-      padding: 80px 10%;
-    }
-
-    h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-
-    .section-note {
-      color: #b8b8b8;
-      max-width: 760px;
-      margin-bottom: 34px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.055);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 20px;
-      padding: 24px;
-      transition: 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(138,180,255,0.45);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.22);
-    }
-
-    .card h3 {
-      margin-bottom: 12px;
-      color: #ffffff;
-    }
-
-    .card p {
-      color: #bdbdbd;
-    }
-
     .skills {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 20px;
+      margin-top: 24px;
     }
 
     .skill {
       padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(138,180,255,0.12);
-      border: 1px solid rgba(138,180,255,0.25);
+      background: rgba(138, 180, 255, 0.12);
+      border: 1px solid rgba(138, 180, 255, 0.25);
       color: #dce7ff;
       font-size: 14px;
+      transition: all 0.3s ease;
     }
 
-    .journey {
+    .skill:hover {
+      transform: translateY(-3px);
+      border-color: #8ab4ff;
+      box-shadow: 0 0 15px rgba(138, 180, 255, 0.35);
+    }
+
+    .dark-section {
       background: #0b0f1a;
     }
 
     .timeline {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 35px;
+      gap: 22px;
+      margin-top: 34px;
     }
 
-    .timeline-card {
-      padding: 24px;
+    .timeline-card,
+    .card {
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 255, 255, 0.11);
       border-radius: 22px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
+      padding: 26px;
       transition: all 0.3s ease;
     }
 
-    .timeline-card:hover {
+    .timeline-card:hover,
+    .card:hover {
       transform: translateY(-5px);
-      border-color: #8ab4ff;
+      border-color: rgba(138, 180, 255, 0.55);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
     }
 
     .timeline-card span {
@@ -186,23 +168,37 @@
       font-weight: bold;
     }
 
-    .timeline-card h3 {
-      margin: 10px 0 6px;
-      font-size: 22px;
-    }
-
-    .timeline-card p {
-      color: #b8b8b8;
-    }
-
     .timeline-card.highlight {
       border-color: #8ab4ff;
-      box-shadow: 0 0 35px rgba(138,180,255,0.18);
+      box-shadow: 0 0 35px rgba(138, 180, 255, 0.18);
+    }
+
+    .timeline-card p,
+    .card p {
+      color: #bdbdbd;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .card small {
+      display: block;
+      color: #8ab4ff;
+      font-weight: bold;
+      margin-bottom: 10px;
     }
 
     .contact {
       background: #05070c;
       text-align: center;
+    }
+
+    .contact .section-note {
+      margin-left: auto;
+      margin-right: auto;
     }
 
     footer {
@@ -211,6 +207,22 @@
       color: #777;
       background: #05070c;
       font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      header,
+      section {
+        padding: 60px 7%;
+      }
+
+      .subtitle {
+        font-size: 21px;
+      }
+
+      .intro,
+      .section-note {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
@@ -238,27 +250,26 @@
   <section>
     <h2>About Me</h2>
     <p class="section-note">
-      I am an SAP ABAP Consultant with experience across SAP IS-U, ABAP Cloud, RAP,
-      CDS Views, enhancements, wrapper frameworks, and Clean Core aligned development.
-      I enjoy solving technical problems that sit between business rules, legacy systems,
-      and modern SAP design.
+      I am an SAP ABAP Consultant with experience across SAP IS-U, ABAP Cloud, RAP, CDS Views,
+      enhancements, wrapper frameworks, and Clean Core aligned development. I enjoy solving technical
+      problems that sit between business rules, legacy systems, and modern SAP design.
     </p>
 
     <div class="skills">
-      <span class="skill">SAP ABAP</span>
-      <span class="skill">SAP IS-U</span>
-      <span class="skill">ABAP Cloud</span>
-      <span class="skill">RAP</span>
-      <span class="skill">CDS Views</span>
-      <span class="skill">Clean Core</span>
-      <span class="skill">OData</span>
-      <span class="skill">RTP Billing</span>
-      <span class="skill">Wrapper Frameworks</span>
-      <span class="skill">Debugging</span>
+      <a class="skill" href="https://learning.sap.com/courses/basic-abap-programming" target="_blank">SAP ABAP</a>
+      <a class="skill" href="https://community.sap.com/t5/crm-and-cx-blog-posts-by-members/sap-isu-explained-like-never-before/ba-p/13443058" target="_blank">SAP IS-U</a>
+      <a class="skill" href="https://help.sap.com/docs/abap-cloud/abap-cloud/abap-cloud-in-nutshell" target="_blank">ABAP Cloud</a>
+      <a class="skill" href="https://community.sap.com/t5/technology-blog-posts-by-sap/an-end-to-end-hands-on-tutorial-for-clean-core-rap-development/ba-p/14276157" target="_blank">RAP</a>
+      <a class="skill" href="https://learning.sap.com/courses/basic-abap-programming/working-with-cds-view_c289f74d-675e-4084-9d90-5635958ec604" target="_blank">CDS Views</a>
+      <a class="skill" href="https://www.sap.com/resources/what-is-a-clean-core" target="_blank">Clean Core</a>
+      <a class="skill" href="https://learning.sap.com/courses/building-odata-services-with-sap-gateway/explaining-open-data-protocol-odata-" target="_blank">OData</a>
+      <a class="skill" href="https://learning.sap.com/courses/configuring-billing-and-invoicing-in-sap-s-4hana-utilities/explaining-real-time-pricing-billing" target="_blank">RTP Billing</a>
+      <a class="skill" href="https://community.sap.com/t5/technology-blog-posts-by-sap/how-to-generate-a-wrapper-for-function-modules-bapis-for-missing-released/ba-p/13692790" target="_blank">Wrapper Frameworks</a>
+      <a class="skill" href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-members/detailed-debugging-techniques-for-functional-consultants/ba-p/13499770" target="_blank">Debugging</a>
     </div>
   </section>
 
-  <section class="journey">
+  <section class="dark-section">
     <h2>Career Timeline</h2>
     <p class="section-note">
       From support and automation to SAP IS-U implementation, RAP, ABAP Cloud, and Clean Core delivery.
@@ -300,37 +311,57 @@
 
     <div class="grid">
       <div class="card">
+        <small>SAP IS-U | RAP | ABAP Cloud | Fiori</small>
         <h3>Unmetered Usage Entry</h3>
-        <p>Developed a custom Fiori application using unmanaged RAP for manual entry of unmetered utility consumption and downstream billing support.</p>
+        <p>
+          Developed a custom Fiori application using unmanaged RAP for manual entry of unmetered
+          utility consumption and downstream billing support.
+        </p>
       </div>
 
       <div class="card">
+        <small>SAP IS-U | RTP Billing | Formula Processing</small>
         <h3>UCDI RTP Enhancement</h3>
-        <p>Built logic for usage imbalance calculations, applicability checks, RTP billing validations, and formula output generation.</p>
+        <p>
+          Built logic for usage imbalance calculations, applicability checks, RTP billing validations,
+          and formula output generation.
+        </p>
       </div>
 
       <div class="card">
+        <small>SAP IS-U | EDM | Billing</small>
         <h3>Shared Solar Billing</h3>
-        <p>Worked on SAP IS-U billing formula logic involving solar generation offsets, usage adjustments, and customer credit calculations.</p>
+        <p>
+          Worked on SAP IS-U billing formula logic involving solar generation offsets, usage adjustments,
+          and customer credit calculations.
+        </p>
       </div>
 
       <div class="card">
+        <small>RAP | ABAP Cloud | SAP IS-U</small>
         <h3>Mass Installation Update</h3>
-        <p>Built RAP-based processing for controlled bulk maintenance of utility installation data with validations and data consistency checks.</p>
+        <p>
+          Built RAP-based processing for controlled bulk maintenance of utility installation data with
+          validations and data consistency checks.
+        </p>
       </div>
 
       <div class="card">
+        <small>ABAP Cloud | Clean Core | Wrapper Classes</small>
         <h3>Clean Core Wrappers</h3>
-        <p>Designed wrapper-based solutions around standard SAP functionality to support upgrade-safe and cloud-compliant extensibility.</p>
+        <p>
+          Designed wrapper-based solutions around standard SAP functionality to support upgrade-safe
+          and cloud-compliant extensibility.
+        </p>
       </div>
     </div>
   </section>
 
-  <section>
+  <section class="dark-section">
     <h2>Beyond the Build</h2>
     <p class="section-note">
-      Work is one part of the story. The rest lives somewhere between writing, music,
-      rain, superheroes, and late-night thoughts.
+      Work is one part of the story. The rest lives somewhere between writing, music, rain,
+      superheroes, and late-night thoughts.
     </p>
 
     <div class="grid">
@@ -353,7 +384,7 @@
 
   <section class="contact">
     <h2>Let’s Connect</h2>
-    <p class="section-note" style="margin-left:auto; margin-right:auto;">
+    <p class="section-note">
       For SAP opportunities, collaborations, or just a good conversation.
     </p>
 
